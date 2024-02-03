@@ -1,0 +1,41 @@
+body {
+    font-family: 'Press Start 2P', system-ui !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-family: 'Press Start 2P', system-ui !important;
+  }
+  .countdown-container {
+    font-size: 0.5em !important;
+  }
+  #countdown {
+    font-size: 3em !important;
+  }
+  #grind {
+    padding-top: 10px !important;
+    font-size: 1em !important;
+  }
+}
+
+.countdown-container {
+  text-align: center;
+  color: #333;
+}
+
+#countdown {
+  font-size: 3em; 
+  margin-top: 20px;
+}
+
+#grind {
+    margin-top: -25px;
+    font-size: 1.4em;
+}

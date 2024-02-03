@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>countdown to final ib exam</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <style>
+    body {
+        font-family: 'Press Start 2P', system-ui !important;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      overflow: hidden;
+     color: #fff;
+    }
+
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      filter: brightness(40%);
+    }
+
+    .countdown-container {
+      position: absolute;
+      text-align: center;
+      color: #fff !important;
+      z-index: 1;
+    }
+
+    #countdown {
+      font-size: 3em;
+      margin-top: 20px;
+    }
+
+    #grind {
+      margin-top: -25px;
+      font-size: 1.4em;
+    }
+
+      #timetable{
+          color: white !important;
+          font-size: 0.8em;
+      }
+      
+  </style>
+</head>
+<body>
+   
+  <video autoplay muted loop id="background-video">
+    <source src="Garden Of Words 4K.mp4" type="video/mp4">
+  </video>
+
+  <div class="countdown-container">
+    <h1 id="countdown"></h1>
+    <h1 id="grind">don't stop the grind</h1>
+       <a href="https://www.ibo.org/globalassets/new-structure/programmes/dp/pdfs/may-2024-examination-schedule-exam-en.pdf" target="_blank" id="timetable">schedule</a>
+      <a href="https://pestle-ib.firebaseapp.com/" target="_blank" id="timetable">practice</a>
+       <a href="https://www.youtube.com/watch?v=sA0qrPOMy2Y" target="_blank" id="timetable">study music</a>
+  </div>
+
+  <script>
+    const countDownDate = new Date("April 25, 2024 00:00:00").getTime();
+    let x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      const days = distance / (1000 * 60 * 60 * 24);
+      document.getElementById('countdown').innerText = days.toFixed(6) + '';
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById('countdown').innerText = "EXPIRED";
+      }
+    }, 100);
+  </script>
+</body>
+</html>
